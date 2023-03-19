@@ -1,0 +1,4 @@
+rate-limit:
+  duration: 1m
+  permit: 10
+
