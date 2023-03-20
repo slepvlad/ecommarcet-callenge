@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @EnableIpRateLimit
-public class EcomMarketChallengeApplication {
+public class EComMarketChallengeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EcomMarketChallengeApplication.class, args);
+        SpringApplication.run(EComMarketChallengeApplication.class, args);
     }
 
 }

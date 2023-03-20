@@ -1,5 +1,6 @@
-package com.ecommarket.challenge.service;
+package com.ecommarket.challenge.service.common;
 
+import com.ecommarket.challenge.service.RateLimitService;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -27,7 +28,7 @@ public class RateLimitAspect {
         var param = joinPoint.getSignature().toString();
         logger.info("Param: {}",param);
 
-        if (!rateLimitService.limit(param)) {
+        if (rateLimitService.isLimit(param)) {
             logger.warn("Limit is exceeded");
             throw new HttpServerErrorException(HttpStatus.BAD_GATEWAY);
         }
