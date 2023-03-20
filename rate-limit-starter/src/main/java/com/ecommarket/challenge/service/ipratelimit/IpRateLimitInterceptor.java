@@ -1,7 +1,8 @@
-package com.ecommarket.challenge.service;
+package com.ecommarket.challenge.service.ipratelimit;
 
 
 import com.ecommarket.challenge.annotation.IpRateLimit;
+import com.ecommarket.challenge.service.RateLimitService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpStatus;
@@ -43,7 +44,7 @@ public class IpRateLimitInterceptor implements HandlerInterceptor {
         }
         var ipAddress = getClientIpAddress(request);
         var param = format("%s/%s:%s", request.getMethod(), request.getRequestURI(), ipAddress);
-        if (!rateLimitService.limit(param)) {
+        if (rateLimitService.isLimit(param)) {
             throw new HttpServerErrorException(HttpStatus.BAD_GATEWAY);
         }
         return true;

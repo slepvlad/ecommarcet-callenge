@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+
+  rate_limit:
+    container_name: rate_limit
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    networks:
+      - net
+    ports:
+      - '8080:8080'
+
+networks:
+  net:

@@ -1,7 +1,7 @@
 package com.ecommarket.challenge;
 
 
-import com.ecommarket.challenge.service.RateLimitServiceImpl;
+import com.ecommarket.challenge.service.ipratelimit.RateLimitServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package com.ecommarket.challenge.service;
+package com.ecommarket.challenge.property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

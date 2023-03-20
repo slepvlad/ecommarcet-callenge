@@ -1,0 +1,22 @@
+{
+  "hints": [
+    {
+      "name": "rate-limit.permit",
+      "values": [
+        {
+          "value": 100,
+          "description": "quantity of requests per time unit."
+        }
+      ]
+    },
+    {
+      "name": "rate-limit.duration",
+      "values": [
+        {
+          "value": "1m",
+          "description": "default time unit for permits."
+        }
+      ]
+    }
+  ]
+}
